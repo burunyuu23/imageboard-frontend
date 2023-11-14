@@ -1,0 +1,39 @@
+@import "@/shared/style/color-consts";
+
+.header {
+  position: fixed;
+  top: 0;
+  padding: 0 16px;
+
+  height: 80px;
+  width: 100dvw;
+
+  display: flex;
+  align-items: center;
+
+  background: $header-color;
+}
+
+.logo {
+  padding: 0 0 0 16px;
+  cursor: pointer;
+}
+
+.icons {
+  position: fixed;
+  right: 16px;
+
+  display: flex;
+  column-gap: 20px;
+}
+
+.icon {
+  border-radius: 50%;
+
+  padding: 6px;
+  font-size: 32px;
+
+  cursor: pointer;
+
+  background: whitesmoke;
+}
