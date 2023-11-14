@@ -1,0 +1,15 @@
+@import "@/shared/style/color-consts";
+
+body {
+	margin: 0;
+}
+
+main {
+	padding: 0 16px;
+	margin: 80px 0 0 0;
+
+	min-height: calc(100dvh - 80px);
+
+	background: $main-color;
+	color: whitesmoke;
+}
