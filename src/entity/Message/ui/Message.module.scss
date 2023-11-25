@@ -1,0 +1,13 @@
+@import "@/shared/style/color-consts";
+
+.main {
+  background: $message-bg;
+  padding: 5px 10px;
+  display: grid;
+  row-gap: 10px;
+}
+
+.header {
+  background: $main-color;
+  padding: 5px 10px;
+}

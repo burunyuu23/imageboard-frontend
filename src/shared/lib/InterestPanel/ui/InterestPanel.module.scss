@@ -1,0 +1,41 @@
+@import "@/shared/style/color-consts";
+
+.header {
+  display: grid;
+
+  row-gap: 20px;
+  padding: 0 0 20px;
+}
+
+@mixin headerElems {
+  display: flex;
+  overflow: auto;
+  column-gap: 20px;
+  background: $header-color;
+  padding: 5px 10px;
+}
+
+.headerThemes {
+  @include headerElems;
+  a {
+    cursor: pointer;
+    color: $link-color;
+
+    &:hover{
+      text-decoration: underline;
+    }
+
+    &[data-selected="true"]{
+      color: white;
+
+      &:hover{
+        cursor: default;
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+.headerButtons {
+  @include headerElems;
+}

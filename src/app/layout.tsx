@@ -5,8 +5,10 @@ import React from "react";
 import StoreProvider from "@/shared/redux/StoreProvider";
 import StyledComponentsRegistry from "@/shared/style/StyledComponentsRegistry";
 import Header from "@/widget/Header/ui/Header";
+import {ConfigProvider} from 'antd';
 
 const inter = Inter({subsets: ['latin']})
+import theme from '@/shared/style/themeConfig';
 
 export const metadata: Metadata = {
     title: 'dnl.hk',
@@ -22,12 +24,14 @@ export default function RootLayout({
         <html lang="en">
         <StoreProvider>
             <StyledComponentsRegistry>
-                <body className={inter.className}>
-                <Header/>
-                <main>
-                    {children}
-                </main>
-                </body>
+                <ConfigProvider theme={theme}>
+                    <body className={inter.className}>
+                    <Header/>
+                    <main>
+                        {children}
+                    </main>
+                    </body>
+                </ConfigProvider>
             </StyledComponentsRegistry>
         </StoreProvider>
         </html>

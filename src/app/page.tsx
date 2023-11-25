@@ -1,4 +1,6 @@
 import styles from './page.module.css'
+import ThemesTable from "@/widget/ThemesTable/ui/ThemesTable";
+import RandomInterest from "@/widget/RandomInterest/ui/RandomInterest";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
               а в некоторых аспектах даже хуже.
           </text>
       </div>
+        <RandomInterest />
+        <ThemesTable />
     </main>
   )
 }
