@@ -1,0 +1,7 @@
+.logo {
+  padding: 0 0 0 16px;
+  cursor: pointer;
+}
+.logo:active {
+  filter: brightness(0.8) saturate(0.8);
+}

@@ -7,16 +7,12 @@
 
   height: 80px;
   width: 100dvw;
+  z-index: 9999;
 
   display: flex;
   align-items: center;
 
   background: $header-color;
-}
-
-.logo {
-  padding: 0 0 0 16px;
-  cursor: pointer;
 }
 
 .icons {

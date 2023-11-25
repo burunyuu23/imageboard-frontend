@@ -13,3 +13,28 @@ main {
 	background: $main-color;
 	color: whitesmoke;
 }
+
+::-webkit-scrollbar {
+	width: 13px;
+}
+
+@mixin scrollbar-left-border {
+	border-left-width: 2px;
+	border-left: solid;
+	border-right-width: 2px;
+	border-right: solid;
+	border-color: mix(black, $main-color, 20%);
+}
+
+::-webkit-scrollbar-track {
+	background: $main-color;
+	@include scrollbar-left-border;
+}
+::-webkit-scrollbar-thumb {
+	background: $header-color;
+	@include scrollbar-left-border;
+	border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: darken($header-color, 3);
+}
