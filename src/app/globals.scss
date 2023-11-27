@@ -1,7 +1,11 @@
 @import "@/shared/style/color-consts";
+@import 'antd-override.scss';
 
 body {
 	margin: 0;
+
+	background: $main-color;
+	color: whitesmoke;
 }
 
 main {
@@ -9,9 +13,6 @@ main {
 	margin: 80px 0 0 0;
 
 	min-height: calc(100dvh - 80px);
-
-	background: $main-color;
-	color: whitesmoke;
 }
 
 ::-webkit-scrollbar {
