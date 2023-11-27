@@ -1,0 +1,19 @@
+.main {
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  font-style: italic;
+  opacity: 0.85;
+}
