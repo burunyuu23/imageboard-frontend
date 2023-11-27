@@ -1,0 +1,25 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+
+  max-width: 50dvw;
+
+  z-index: 999;
+
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  z-index: 1000;
+  cursor: pointer;
+}
