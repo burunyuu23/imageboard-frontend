@@ -1,8 +1,11 @@
-"use client";
+'use client';
+
 import React from 'react';
 import {Tabs, TabsProps} from "antd";
-import {RandomMessageInfo} from "@/entity/Message";
-import {RandomBoardInfo} from "@/entity/Board";
+
+import { RandomBoardInfo } from "@/entity/Board";
+
+import RandomMessageInfo from "./RandomMessageInfo";
 
 const items: TabsProps['items'] = [
     {
