@@ -25,8 +25,8 @@ const DraggableModal = ({children, onClose, startPosition}: DraggableModalProps)
         dragRef.current!.style.left = `${startPosition.x}px`;
     }, []);
 
-    // TODO: переместить в редакс РЕДУХ
-    const modalNumber = useMemo(() => document.body.getElementsByClassName(DRAGGABLE_CLASSNAME).length + 1, []);
+    // TODO: переместить в редакс РЕДУХ + разделение на группы
+    const [modalNumber] = useState(document.body.getElementsByClassName(DRAGGABLE_CLASSNAME).length + 1);
 
     const handlePropagation = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
