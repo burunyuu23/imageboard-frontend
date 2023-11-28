@@ -15,11 +15,42 @@
   }
 }
 
-.close {
+@mixin icon {
   position: absolute;
-  right: 0;
-  top: 0;
 
   z-index: 1000;
   cursor: pointer;
+}
+@mixin borderIcon {
+  background: white;
+  color: black;
+
+  border: 1px solid white;
+  padding: 5px;
+  left: -10px;
+
+  &[data-selected = 'true'] {
+    border: 1px solid black;
+    background: black;
+    color: white;
+  }
+}
+.number {
+  @include icon;
+  @include borderIcon;
+  font-size: 20px;
+  padding: 0;
+  left: -3px;
+  top: 18px;
+}
+.pin {
+  @include icon;
+  @include borderIcon;
+  border-radius: 50%;
+  top: 40px;
+}
+.close {
+  @include icon;
+  right: 0;
+  top: 0;
 }
