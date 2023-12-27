@@ -1,0 +1,37 @@
+@import "@/shared/style/color-consts";
+
+.header {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.threadName {
+  background: $message-bg;
+  width: 100%;
+  padding: 5px 5px 30px 10px;
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.message {
+  border: 2px solid rgba(white, .25);
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+  background: $message-bg;
+}
+
+.inputPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.textArea {
+  height: 100%;
+}
+
+.dragger {
+  background: white;
+}

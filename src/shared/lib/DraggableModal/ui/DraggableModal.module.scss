@@ -1,0 +1,80 @@
+@import "@/shared/style/color-consts";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(black, 0.4);
+  border-radius: 6px;
+  border: 2px solid rgba(white, .25);
+
+  max-width: 50dvw;
+
+  //resize: both;
+  //overflow: auto;
+  z-index: 99999;
+}
+
+.background {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 1;
+  opacity: 0;
+}
+
+.header {
+  height: 20px;
+  z-index: 2;
+  width: 100%;
+
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.content {
+  padding: 5px;
+  height: 100%;
+}
+
+@mixin icon {
+  position: absolute;
+
+  z-index: 1000;
+  cursor: pointer;
+}
+@mixin borderIcon {
+  background: white;
+  color: black;
+
+  border: 1px solid white;
+  padding: 5px;
+  left: -10px;
+
+  &[data-selected = 'true'] {
+    border: 1px solid black;
+    background: black;
+    color: white;
+  }
+}
+.number {
+  @include icon;
+  @include borderIcon;
+  font-size: 20px;
+  padding: 0;
+  left: -3px;
+  top: 18px;
+}
+.pin {
+  @include icon;
+  @include borderIcon;
+  border-radius: 50%;
+  top: 40px;
+}
+.close {
+  @include icon;
+  right: 7px;
+  top: 7px;
+}

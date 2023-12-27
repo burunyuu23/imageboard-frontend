@@ -1,6 +1,11 @@
 @import "@/shared/style/color-consts";
 
-.header {
+.main {
+  display: grid;
+  gap: 10px;
+}
+
+.help-panel {
   display: grid;
 
   row-gap: 20px;
@@ -12,30 +17,10 @@
   overflow: auto;
   column-gap: 20px;
   background: $header-color;
+  border-radius: 20px;
   padding: 5px 10px;
 }
 
-.headerThemes {
-  @include headerElems;
-  a {
-    cursor: pointer;
-    color: $link-color;
-
-    &:hover{
-      text-decoration: underline;
-    }
-
-    &[data-selected="true"]{
-      color: white;
-
-      &:hover{
-        cursor: default;
-        text-decoration: none;
-      }
-    }
-  }
-
-}
 .headerButtons {
   @include headerElems;
 }

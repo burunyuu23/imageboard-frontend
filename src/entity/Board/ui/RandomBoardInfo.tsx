@@ -1,7 +1,7 @@
 "use client"
 import React, {useEffect, useState} from 'react';
 import {useFetch} from "@/shared/hooks/useFetch";
-import {getRandomBoardPath} from "@/shared/api/board_paths";
+import {getRandomBoardPath} from "@/entity/Board/model/board_paths";
 import InterestPanel from "@/shared/lib/InterestPanel/ui/InterestPanel";
 import {Button} from "antd";
 import {LoadingContext, LoadingPanel} from "@/shared/lib/LoadingPanel";

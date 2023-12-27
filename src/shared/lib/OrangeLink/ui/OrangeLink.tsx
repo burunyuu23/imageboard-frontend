@@ -1,16 +1,17 @@
 import React from 'react';
+
 import styles from './OrangeLink.module.scss';
-import Link from "next/link";
 
 type OrangeLinkProps = {
     url?: string
-    onClick?: () => void
-    children: React.ReactNode
+    onClick?: React.MouseEventHandler;
+    children: React.ReactNode,
+    error?: boolean
 };
 
-const OrangeLink = ({ url, children, onClick }: OrangeLinkProps) => {
+const OrangeLink = ({ url, children, onClick, error }: OrangeLinkProps) => {
     return (
-        <a className={styles.link} href={url || "#!"} onClick={onClick}>
+        <a className={[styles.link, error ? styles.error : ''].join(' ')} href={url || "#!"} onClick={onClick}>
             {children}
         </a>
     );

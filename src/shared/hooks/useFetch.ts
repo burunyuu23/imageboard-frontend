@@ -1,7 +1,7 @@
-import {useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 type Return<T> = {
-    data: T | undefined,
+    data?: T,
     fetch: (...args: any[]) => Promise<void>,
     loading: boolean,
     error: string,
@@ -15,15 +15,17 @@ export const useFetch = <T>(fetchData: (...args: any[]) => Promise<Response>): R
 
     const clearError = () => setError('')
 
-    const fetch = async (...args: any[]) => {
+    const fetch = useCallback(async (...args: any[]) => {
         setLoading(true)
         clearError()
 
         try {
             const response = await fetchData(...args)
 
-            if (response.ok)
-                setData(await response.json() as T)
+            if (response.ok) {
+                const resp = await response.json();
+                setData(resp)
+            }
             else {
                 setError(response.statusText.toString() || 'An error occurred during the request');
             }
@@ -31,7 +33,7 @@ export const useFetch = <T>(fetchData: (...args: any[]) => Promise<Response>): R
             setError(e.toString() || 'An error occurred during the request');
         }
         setLoading(false)
-    }
+    }, [fetchData]);
 
     return {data, fetch, loading, error, clearError}
 }

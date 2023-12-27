@@ -1,19 +1,13 @@
 import React from 'react';
-import {getAllThemesPath} from "@/shared/api/theme_paths";
+import {getAllThemesPath} from "@/entity/Theme/model/theme_paths";
 import {Theme} from "@/entity/Theme/model/types";
 import {ThemeInfo} from '@/entity/Theme';
 import {BoardInfo} from "@/entity/Board";
 
-const getStaticProps = async (): Promise<Theme[]> => {
-    const res = await fetch(getAllThemesPath);
-    return await res.json()
-}
 type ThemesTableProps = {
     themes: Theme[]
 };
-const ThemesTable = async () => {
-    const themes = await getStaticProps();
-
+const ThemesTable = async ({themes}: ThemesTableProps) => {
     return (
         <>
             {

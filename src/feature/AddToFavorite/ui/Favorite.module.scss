@@ -1,0 +1,14 @@
+@import "@/shared/style/color-consts";
+
+.like {
+  background: none;
+
+  &[data-liked='true'] {
+    background: $link-color;
+    color: black;
+
+    &:hover {
+      color: black !important;
+    }
+  }
+}
