@@ -1,7 +1,9 @@
-import {Message, ReplyMessage} from "@/entity/Message/model/types";
+import { Message, ReplyMessage } from "@/entity/Message/model/types";
 import MessageInfo from "@/entity/Message/ui/MessageInfo";
-import RandomMessageInfo from "@/entity/Message/ui/RandomMessageInfo";
+import { QUOTE_SIGN, REPLY_SIGN } from "./model/replySign";
+import { messageApi } from "@/entity/Message/model/api";
 
-export type {Message, ReplyMessage}
-export {MessageInfo}
-export {RandomMessageInfo}
+export type { Message, ReplyMessage }
+export { MessageInfo }
+export { REPLY_SIGN, QUOTE_SIGN }
+export { messageApi }

@@ -1,0 +1,16 @@
+.mainMessage {
+  padding-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.main {
+  max-height: calc(100dvh - 80px);
+  overflow: auto;
+}
+
+.noMessages {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}

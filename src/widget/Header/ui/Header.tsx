@@ -1,19 +1,18 @@
 import React from 'react';
-import styles from './Header.module.scss';
 import {BellOutlined, TeamOutlined} from "@ant-design/icons";
+
 import Logo from "@/widget/Header/ui/Logo";
 
-type HeaderProps = {
+import styles from './Header.module.scss';
+import Link from "next/link";
 
-};
-
-const Header = ({  }: HeaderProps) => {
+const Header = () => {
     return (
         <header className={styles.header}>
             <Logo/>
             <div className={styles.icons}>
                 <BellOutlined className={styles.icon} /> {/* TODO: Notifications Feature */}
-                <TeamOutlined className={styles.icon} /> {/* TODO: Profile Feature */}
+                <Link href={"/my/liked"}><TeamOutlined className={styles.icon} /></Link> {/* TODO: Profile Feature */}
             </div>
         </header>
     );

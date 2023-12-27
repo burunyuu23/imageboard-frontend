@@ -1,0 +1,15 @@
+@import "@/shared/style/color-consts";
+
+.reply {
+  background: none;
+
+  &[data-active='true'] {
+    background: $link-color;
+    color: black;
+
+    &:hover {
+
+      color: black !important;
+    }
+  }
+}

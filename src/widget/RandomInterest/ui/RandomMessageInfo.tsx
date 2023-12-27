@@ -6,12 +6,14 @@ import ButtonGroup from "antd/es/button/button-group";
 import {RightOutlined} from '@ant-design/icons';
 
 import {Message, MessageInfo} from "@/entity/Message";
-import {getIdMessagePath, getRandomMessagePath, getRandomMessagePathByThread} from "@/shared/api/message_paths";
+import {getIdMessagePath, getRandomMessagePath, getRandomMessagePathByThread} from "@/entity/Message/model/message_paths";
 import {LoadingContext, LoadingPanel} from "@/shared/lib/LoadingPanel";
 import InterestPanel from "@/shared/lib/InterestPanel/ui/InterestPanel";
 import {useFetch} from "@/shared/hooks/useFetch";
 import Replies from "@/feature/ReplyLink/ui/Replies";
 import Responses from "@/feature/ReplyLink/ui/Responses";
+import ReplyMessage from "@/feature/ReplyMessage/ui/ReplyMessage";
+import AddToFavorite from "@/feature/AddToFavorite/ui/AddToFavorite";
 
 type RandomMessageInfoProps = {};
 
@@ -34,7 +36,7 @@ const RandomMessageInfo = ({}: RandomMessageInfoProps) => {
             (<Button key="1" onClick={() =>
                 handleClick(getRandomMessagePath)
             }>
-                Ещё
+                Случайное сообщение
             </Button>),
             (<ButtonGroup key="2">
                 <Button>
@@ -59,6 +61,9 @@ const RandomMessageInfo = ({}: RandomMessageInfoProps) => {
                                      replies={<Replies responses={value.responses}
                                                        messageBody={value.body}/>}
                                      responses={<Responses replies={value.replies}/>}
+                                     buttons={<ButtonGroup>
+                                         <AddToFavorite message={value}/>
+                                     </ButtonGroup>}
                         />
                     )}
                 </LoadingContext.Consumer>

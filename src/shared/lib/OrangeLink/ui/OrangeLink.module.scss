@@ -1,5 +1,10 @@
 @import "@/shared/style/color-consts";
 
 .link {
-  color: $link-color
+  color: $link-color;
+}
+
+.error {
+  color: $error-link-color !important;
+  cursor: not-allowed;
 }

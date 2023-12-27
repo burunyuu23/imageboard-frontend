@@ -14,7 +14,7 @@ const Responses = ({ replies }: ResponsesProps) => {
         useState(replies.length > 10 ? 10 : replies.length)
 
     return (
-        <>
+        <div>
             {replies.map(
                 (reply, index) => {
                     if (index > maxResponses) return;
@@ -35,7 +35,7 @@ const Responses = ({ replies }: ResponsesProps) => {
                     </span>)
                 }
             )}
-        </>
+        </div>
     );
 };
 

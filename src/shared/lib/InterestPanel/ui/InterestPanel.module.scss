@@ -1,5 +1,10 @@
 @import "@/shared/style/color-consts";
 
+.main {
+  display: grid;
+  gap: 10px;
+}
+
 .help-panel {
   display: grid;
 

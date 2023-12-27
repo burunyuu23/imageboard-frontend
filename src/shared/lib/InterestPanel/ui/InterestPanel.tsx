@@ -8,7 +8,7 @@ type InterestPanelProps = {
 
 const InterestPanel = ({headerButtons, children}: InterestPanelProps) => {
     return (
-        <div>
+        <div className={styles.main}>
             <header className={styles.header}>
                 <div className={[styles.headerButtons].join(" ")}>
                     {headerButtons.map(

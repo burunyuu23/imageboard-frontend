@@ -1,18 +1,42 @@
+@import "@/shared/style/color-consts";
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 10px;
+  background: rgba(black, 0.4);
+  border-radius: 6px;
+  border: 2px solid rgba(white, .25);
 
   max-width: 50dvw;
 
-  z-index: 999;
+  //resize: both;
+  //overflow: auto;
+  z-index: 99999;
+}
+
+.background {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 1;
+  opacity: 0;
+}
+
+.header {
+  height: 20px;
+  z-index: 2;
+  width: 100%;
 
   cursor: grab;
-
   &:active {
     cursor: grabbing;
   }
+}
+
+.content {
+  padding: 5px;
+  height: 100%;
 }
 
 @mixin icon {
@@ -51,6 +75,6 @@
 }
 .close {
   @include icon;
-  right: 0;
-  top: 0;
+  right: 7px;
+  top: 7px;
 }

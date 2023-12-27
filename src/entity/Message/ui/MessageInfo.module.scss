@@ -13,10 +13,20 @@
   background: $main-color;
   padding: 5px 10px;
   border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.helpWithButtonsPanel {
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .content {
   padding: 0 15px;
+  display: grid;
+  gap: 10px;
 
   & p {
     margin: 0;

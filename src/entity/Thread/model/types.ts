@@ -2,7 +2,7 @@ import {Message} from "@/entity/Message";
 
 export type Thread = {
     id: number
-    // board: string
+    board: string
     name: string
     createdDate: number
     messages: Message[]

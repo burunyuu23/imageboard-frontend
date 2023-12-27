@@ -15,6 +15,7 @@ main {
 	min-height: calc(100dvh - 80px);
 }
 
+
 ::-webkit-scrollbar {
 	width: 13px;
 }
@@ -38,4 +39,23 @@ main {
 }
 ::-webkit-scrollbar-thumb:hover {
 	background: darken($header-color, 3);
+}
+
+.cite {
+	color: $quote-color;
+	display: flex;
+	&::before {
+		content: ">";
+	}
+}
+
+a {
+	filter: brightness(1);
+	transition: all 0.1s linear;
+	&:hover {
+		filter: brightness(0.9) drop-shadow(0 0 10px rgba(black, 0.2));
+	}
+	:active {
+		filter: brightness(0.8) saturate(0.8);
+	}
 }

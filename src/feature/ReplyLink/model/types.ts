@@ -1,4 +1,4 @@
 export type ParsedReplies = {
-    replies: string[]
+    replies: string[],
     text: string[]
 }

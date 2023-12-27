@@ -6,18 +6,21 @@ import {createPortal} from "react-dom";
 import Replies from "@/feature/ReplyLink/ui/Replies";
 import {MessageInfo} from "@/entity/Message";
 import {useFetch} from "@/shared/hooks/useFetch";
-import {getIdMessagePath} from "@/shared/api/message_paths";
+import {getIdMessagePath} from "@/entity/Message/model/message_paths";
 import OrangeLink from "@/shared/lib/OrangeLink/ui/OrangeLink";
 import DraggableModal from "@/shared/lib/DraggableModal/ui/DraggableModal";
 import {LoadingContext, LoadingPanel} from "@/shared/lib/LoadingPanel";
 import Responses from "@/feature/ReplyLink/ui/Responses";
+import {useAppDispatch} from "@/shared/hooks/useAppDispatch";
+import {addMessageSlice} from "@/entity/Message/model/addMessage.slice";
 
 type ReplyLinkProps = {
     children: React.ReactNode,
-    messageId: number
+    messageId: number,
+    error?: boolean
 };
 
-const ReplyLink = ({ children, messageId }: ReplyLinkProps) => {
+const ReplyLink = ({ children, messageId, error }: ReplyLinkProps) => {
     const [showMessageId, setShowMessageId] = useState(0)
     const [clickPosition, setClickPosition] = useState({x: 0, y: 0});
 
@@ -30,11 +33,12 @@ const ReplyLink = ({ children, messageId }: ReplyLinkProps) => {
 
     const newMessageInfo = (e: React.MouseEvent, messageId: number) => {
         setClickPosition({x: e.clientX, y: e.clientY});
-        setShowMessageId(messageId);
+        if (!error) setShowMessageId(messageId);
     }
     return (
         <>
             <OrangeLink
+                error={error}
                 onClick={(e: React.MouseEvent) => newMessageInfo(e, messageId)}>
                 {children}
             </OrangeLink>
